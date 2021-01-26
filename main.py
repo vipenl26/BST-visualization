@@ -54,10 +54,14 @@ class BST:
 
 
 def draw(n,x,y):
+	shift_x=12
+	shift_y=18
+	if n>9: shift_x+=10
+	
 	pygame.draw.circle(screen,(0,0,255),(x,y),30)
 	font=pygame.font.SysFont(None,60)
 	screen_text=font.render(str(n),True,(0,0,0))
-	screen.blit(screen_text,[x-12,y-18])
+	screen.blit(screen_text,[x-shift_x,y-shift_y])
 
 def frame_update():
 	screen.fill((255,255,255))
@@ -97,7 +101,7 @@ bt.push(6)
 bt.push(2)
 bt.push(1)
 bt.push(3)
-bt.push(0)
+bt.push(10)
 # bt.push(-1)
 drawBST(0,1280,bt.head)
 
